@@ -68,12 +68,39 @@
 //   console.log(frutas[i]);
 // }
 
-const alunos = Number(prompt("Nesta sala há quantos alunos? "))
-let notas = 0
+// const alunos = Number(prompt("Nesta sala há quantos alunos? "))
+// let notas = 0
 
-for (let index = 1; index  <= alunos ; index++) {
-  notas += parseFloat(prompt("digite sua nota "))
+// for (let index = 1; index  <= alunos ; index++) {
+//   notas += parseFloat(prompt("digite sua nota "))
+// }
+
+// const media = (notas + alunos)/alunos
+// alert(`A media dos alunos é ${media}`)
+//\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\
+// **Cenário 1: Gerenciamento de Tarefas**
+
+// Desenvolva um script que permita ao usuário criar uma lista de tarefas. O usuário deve ser capaz de adicionar múltiplas tarefas ao final da lista até decidir parar. Ao final da adição, a lista completa de tarefas deve ser exibida. Em seguida, o script deve perguntar se o usuário deseja remover a primeira tarefa da lista, realizando a remoção (se houver tarefas) e mostrando a lista atualizada, ou informando que não há tarefas a serem removidas
+// arrays:
+let tarefa = "";
+const atividade = [];
+let retirar = "";
+do {
+  tarefa = prompt(
+    "Você tem alguma atividde para realizar? "
+  ).toLowerCase();
+  if (tarefa === "sim") {
+    atividade.push(prompt("Se sim diga qual: "));
+  } else {
+    console.log(`Essas são suas tarefas ${atividade}`);
+  }
+} while (tarefa === "sim");
+
+do {
+  retirar = prompt("Você deseja retirar algo da sua lista de tarefas ?")
+if (retirar === "sim") {
+  atividade.shift()
+}else{
+  alert(`Essas são suas tarefas ${atividade}`)
 }
-
-const media = (notas + alunos)/alunos
-alert(`A media dos alunos é ${media}`)
+} while (retirar === "sim");
